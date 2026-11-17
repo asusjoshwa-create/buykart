@@ -154,7 +154,7 @@ RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET", "")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 if os.environ.get("CLOUD_NAME"):  # only on the live server
-    INSTALLED_APPS = ["cloudinary_storage", "cloudinary"] + INSTALLED_APPS
+    INSTALLED_APPS += ["cloudinary_storage", "cloudinary"]
     CLOUDINARY_STORAGE = {"CLOUD_NAME": os.environ["CLOUD_NAME"], "API_KEY": os.environ["CLOUD_KEY"], "API_SECRET": os.environ["CLOUD_SECRET"]}
     STORAGES = {
         "default": {"BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage"},
